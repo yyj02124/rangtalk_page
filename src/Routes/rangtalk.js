@@ -1,12 +1,10 @@
 import React from "react";
-import FixedHeaderMenu from "../components/fixedheadermenu";
-import FixedHeaderLink from "../components/fixedheaderlink";
+import RangtalkFixedHeaderLink from "../rangtalkcomonents/Rangtalkfixedheaderlink.js";
 
 function Rangtalk() {
   return (
     <div>
-      <FixedHeaderMenu />
-      <FixedHeaderLink />
+      <RangtalkFixedHeaderLink />
       <h1>Hello</h1>
     </div>
   );

@@ -1,16 +1,14 @@
 import React from "react";
-import FixedHeaderMenu from "../components/fixedheadermenu";
-import FixedHeaderLink from "../components/fixedheaderlink";
-import SummaryArtice from "../components/summaryarticle";
-import YoutubeAdvertisementArticle from "../components/adarticle";
-import DetailArticle from "../components/detailarticle";
-import FAQ from "../components/faq";
+import SsamtalkFixedHeaderMenu from "../ssamtalkcomponents/Ssamtalkfixedheadermenu";
+import SummaryArtice from "../commoncomponents/Summaryarticle";
+import YoutubeAdvertisementArticle from "../commoncomponents/AdArticle";
+import DetailArticle from "../commoncomponents/Detailarticle";
+import FAQ from "../commoncomponents/Faq";
 
 function Ssamtalk() {
   return (
     <div>
-      <FixedHeaderMenu />
-      <FixedHeaderLink />
+      <SsamtalkFixedHeaderMenu />
       <SummaryArtice />
       <YoutubeAdvertisementArticle />
       <DetailArticle />

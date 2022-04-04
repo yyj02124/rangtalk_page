@@ -4,7 +4,7 @@ import styles from "./summaryarticle.css";
 const DetailArticle = () => {
   return (
     <div className=" detailArticleContainer">
-      <div>
+      <div id="1">
         <img
           className="img_mockup_teacher"
           alt="img_mockup_teacher"
