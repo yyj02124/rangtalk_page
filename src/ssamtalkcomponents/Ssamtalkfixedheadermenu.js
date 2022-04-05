@@ -3,6 +3,7 @@ import React from "react";
 import { Link as ScrollLink } from "react-scroll/modules";
 import { Link } from "react-router-dom";
 import { StyledAppBar } from "../commoncomponents/Css";
+import HeadMenuBtn, { HeadLinkBtn } from "../commoncomponents/Btnexport";
 
 // const StyledAppBar = styled(AppBar)(({ theme }) => ({
 //   backgroundColor: "#fff",
@@ -18,39 +19,49 @@ const SsamtalkFixedHeaderMenu = () => {
       >
         <Container>
           <Box
+            height={40}
             p={1}
             mt={1}
-            backgroundColor="#efefef"
             display="flex"
             justifyContent="space-between"
           >
             <img alt="img_fulllogo_big@2x" src="img/img_fulllogo_big@2x.png" />
             <div>
               <ScrollLink to="1" spy={true} smooth={true}>
-                <span>Fixedmenubar1 </span>
+                <HeadMenuBtn name="랑톡소개" />
               </ScrollLink>
-              <span>Fixedmenubar2 </span>
-              <span>Fixedmenubar3 </span>
-              <span>Fixedmenubar4 </span>
+              <HeadMenuBtn name="FAQ" />
+              <HeadMenuBtn name="다운로드" />
+              <HeadMenuBtn name="문의접수" />
               <Link to="/login" style={{ textDecoration: "none" }}>
-                <Button variant="contained" /*fullWidth*/>Login</Button>
+                <HeadMenuBtn
+                  color="ssamtalk"
+                  variant="contained"
+                  name="로그인"
+                />
               </Link>
             </div>
           </Box>
 
-          <Box
-            p={2}
-            mt={1}
-            backgroundColor="#efefef"
-            display="flex"
-            justifyContent="center"
-          >
-            <span> 아이랑톡 </span>
+          <Box p={1} mt={1} mb={1} display="flex" justifyContent="center">
+            <HeadLinkBtn
+              color="irangtalk"
+              variant="contained"
+              name="아이랑톡"
+            />
             <Link to="/ssamtalk" style={{ textDecoration: "none" }}>
-              <span> 쌤이랑톡 </span>
+              <HeadLinkBtn
+                color="ssamtalk"
+                variant="contained"
+                name="쌤이랑톡"
+              />
             </Link>
             <Link to="/rangtalk" style={{ textDecoration: "none" }}>
-              <span> 학교랑톡 </span>
+              <HeadLinkBtn
+                color="rangtalk"
+                variant="contained"
+                name="학교랑톡"
+              />
             </Link>
           </Box>
         </Container>

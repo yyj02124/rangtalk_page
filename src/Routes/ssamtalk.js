@@ -10,10 +10,9 @@ function Ssamtalk() {
     <div>
       <SsamtalkFixedHeaderMenu />
       <SummaryArtice />
-      <YoutubeAdvertisementArticle />
+      <YoutubeAdvertisementArticle bgcolor="ssamtalklite.main" />
       <DetailArticle />
       <FAQ />
-
       <h1>Hello</h1>
     </div>
   );

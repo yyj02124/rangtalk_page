@@ -1,3 +1,4 @@
+import { Box, Container, Typography } from "@mui/material";
 import React from "react";
 import styles from "./summaryarticle.css";
 
@@ -5,14 +6,26 @@ const DetailArticle = () => {
   return (
     <div className=" detailArticleContainer">
       <div id="1">
-        <img
-          className="img_mockup_teacher"
-          alt="img_mockup_teacher"
-          src="img/img_mockup_teacher@2x.png"
-        />
-        detailarticle
-        <span>아이와학부모를 위한</span>
-        <p>쌤이랑톡</p>
+        <Box
+          bgcolor="#f3f5f8"
+          position="relative"
+          height={1080}
+          sx={{ opacity: [0.19] }}
+        >
+          <Container>
+            <Box sx={{ opacity: [1] }} position="relative" height={1080}>
+              <Box
+                component="img"
+                sx={{ width: 670, height: 670 }}
+                alt="img_mockup_teacher"
+                src="img/img_mockup_teacher@2x.png"
+              />
+              <Typography variant="h4">아이와학부모를 위한</Typography>
+              <Typography>쌤이랑톡</Typography>
+            </Box>
+          </Container>
+        </Box>
+
         <span>
           학교 선생님 전용 번호를 쉽게 알 수 있고, 실시간으로 학교 소식을 받아볼
           수 있습니다. 1:1 게시판을 통해 선생님과 비밀 상담도 가능합니다.
