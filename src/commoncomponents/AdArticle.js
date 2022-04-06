@@ -1,22 +1,7 @@
 import { Box, Container, createTheme, ThemeProvider } from "@mui/material";
 import React from "react";
-import styles from "./summaryarticle.css";
-
-const theme = createTheme({
-  palette: {
-    ssamtalk: {
-      main: "#71a5d9",
-      contrastText: "#fff",
-    },
-    ssamtalklite: {
-      main: "#e9eff6",
-    },
-    rangtalk: {
-      main: "#5fc6be",
-      contrastText: "#fff",
-    },
-  },
-});
+import "./summaryarticle.css";
+import theme from "../Colorcss";
 
 const YoutubeAdvertisementArticle = ({ bgcolor = "" }) => {
   return (

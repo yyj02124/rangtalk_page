@@ -1,63 +1,134 @@
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Container, ThemeProvider, Typography } from "@mui/material";
 import React from "react";
 import styles from "./summaryarticle.css";
+import theme from "../Colorcss";
+import { Dot } from "../exportonly/Btn";
+import { height, lineHeight, width } from "@mui/system";
 
-const DetailArticle = () => {
+const DetailArticle = ({
+  ImgMockup = "",
+  article1 = "",
+  article2 = "",
+  article2color = "",
+  article3 = "",
+  article4 = "",
+  article5 = "",
+  article6 = "",
+  article7 = "",
+  article8 = "",
+  article9 = "",
+  ImgSub04 = "",
+  ImgSub05 = "",
+  ImgSub06 = "",
+  bgcolor = "",
+  bghighlight = "",
+  dotcolor = "",
+}) => {
   return (
-    <div className=" detailArticleContainer">
-      <div id="1">
-        <Box
-          bgcolor="#f3f5f8"
-          position="relative"
-          height={1080}
-          sx={{ opacity: [0.19] }}
-        >
-          <Container>
-            <Box sx={{ opacity: [1] }} position="relative" height={1080}>
-              <Box
-                component="img"
-                sx={{ width: 670, height: 670 }}
-                alt="img_mockup_teacher"
-                src="img/img_mockup_teacher@2x.png"
-              />
-              <Typography variant="h4">아이와학부모를 위한</Typography>
-              <Typography>쌤이랑톡</Typography>
+    <ThemeProvider theme={theme}>
+      <Box>
+        <div id="1">
+          <Box bgcolor={bgcolor} position="relative" height={1080}>
+            <Container>
+              <Box position="relative" height={1080}>
+                <Box display="flex" justifyContent="center">
+                  <Box
+                    mt={10}
+                    component="img"
+                    sx={{ width: 670, height: 670 }}
+                    alt="img_mockup_teacher"
+                    src={ImgMockup}
+                  />
+
+                  <Box mt={35}>
+                    <Box
+                      position={"absolute"}
+                      mt={0.4}
+                      bgcolor={bghighlight}
+                      sx={{ width: "200px", height: "20px" }}
+                    />
+                    <Box position={"relative"}>
+                      <Typography
+                        sx={{ width: "200px", lineHeight: 1.2 }}
+                        fontSize="20px"
+                        color="#000"
+                      >
+                        {article1}
+                      </Typography>
+                    </Box>
+                    <Typography color={article2color} variant="h2">
+                      {article2}
+                    </Typography>
+                    <Typography>{article3}</Typography>
+                  </Box>
+                </Box>
+              </Box>
+            </Container>
+          </Box>
+        </div>
+        <Container>
+          <Box
+            sx={{ placeItems: "center", maxWidth: "1152px" }}
+            display="grid"
+            gridTemplateColumns="1fr 1fr 18px 18px 18px 1fr 1fr 18px 18px 18px 1fr 1fr"
+            position="absolute"
+            mt={-30}
+          >
+            <Box
+              component="img"
+              sx={{ width: 120, height: 120 }}
+              alt="img_sub_04"
+              src={ImgSub04}
+            />
+            <Box>
+              <Typography>
+                <strong>
+                  {article4}
+                  <br />
+                </strong>
+                {article5}
+              </Typography>
             </Box>
-          </Container>
-        </Box>
-
-        <span>
-          학교 선생님 전용 번호를 쉽게 알 수 있고, 실시간으로 학교 소식을 받아볼
-          수 있습니다. 1:1 게시판을 통해 선생님과 비밀 상담도 가능합니다.
-          이외에도 학부모, 아이의 편의를 위한 다양한 부가서비스를 추가할
-          예정입니다.
-        </span>
-      </div>
-
-      <div className="subDetails">
-        <img alt="img_sub_04" src="img/img_sub_04@2x.png"></img>
-        <span>
-          <strong>실시간 알림</strong> 학교 및 학급 게시판을 통해 실시간으로
-          학교 소식 확인이 가능합니다.
-        </span>
-        <div className="dot"></div>
-        <div className="dot"></div>
-        <div className="dot"></div>
-        <img alt="img_sub_05" src="img/img_sub_05@2x.png"></img>
-        <span>
-          <strong>편리한 소통</strong> 학급게시판, 1:1게시판 등 선생님과의
-          원활한 소통을 위한 창구가 마련되어 있습니다.
-        </span>
-        <div className="dot"></div>
-        <div className="dot"></div>
-        <div className="dot"></div>
-        <img alt="img_sub_06" src="img/img_sub_06@2x.png"></img>
-        <span>
-          <strong>긴급 알림</strong> 학급게시판, 1:1게시판 등 선생님과의 원활한
-          소통을 위한 창구가 마련되어 있습니다.
-        </span>
-      </div>
-    </div>
+            <Dot dotcolor={dotcolor} />
+            <Dot dotcolor={dotcolor} />
+            <Dot dotcolor={dotcolor} />
+            <Box
+              component="img"
+              sx={{ width: 120, height: 120 }}
+              alt="img_sub_05"
+              src={ImgSub05}
+            />
+            <Box>
+              <Typography>
+                <strong>
+                  {article6}
+                  <br />
+                </strong>
+                {article7}
+              </Typography>
+            </Box>
+            <Dot dotcolor={dotcolor} />
+            <Dot dotcolor={dotcolor} />
+            <Dot dotcolor={dotcolor} />
+            <Box
+              component="img"
+              sx={{ width: 120, height: 120 }}
+              alt="img_sub_06"
+              src={ImgSub06}
+            />
+            <Box>
+              <Typography>
+                <strong>
+                  {article8}
+                  <br />
+                </strong>
+                {article9}
+              </Typography>
+            </Box>
+          </Box>
+        </Container>
+      </Box>
+    </ThemeProvider>
   );
 };
 

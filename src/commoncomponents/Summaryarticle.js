@@ -1,9 +1,10 @@
 import { Avatar, Box, Container, Typography } from "@mui/material";
 import React from "react";
-import { DownloadBtn } from "./Btnexport";
+import { DownloadBtn } from "../exportonly/Btn";
 import styles from "./summaryarticle.css";
+import theme from "../Colorcss";
 
-const SummaryArtice = () => {
+const SummaryArtice = ({ ImgBack = "" }) => {
   return (
     <Box mt={13} position="relative">
       <Box
@@ -11,7 +12,7 @@ const SummaryArtice = () => {
         component="img"
         sx={{ width: "100%", height: 1080 }}
         alt="img_back@2x.png"
-        src="./img/img_back@2x.png"
+        src={ImgBack}
       />
       <Container>
         <Box position="absolute" mt={-100}>
@@ -19,7 +20,7 @@ const SummaryArtice = () => {
             쌤이<strong>랑</strong>, 학부모<strong>랑</strong>,아이
             <strong>랑</strong>
           </Typography>
-          <Typography mb={3} variant="h3">
+          <Typography mb={3} variant="h1">
             랑톡
           </Typography>
           <Box mb={10} width={500}>

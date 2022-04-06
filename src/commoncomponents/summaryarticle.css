@@ -10,27 +10,3 @@ iframe {
   max-height: 675px;
   border: 1px solid #707070;
 }
-
-.img_mockup_teacher {
-  width: 670px;
-  height: 670px;
-}
-
-.dot {
-  width: 6px;
-  height: 6px;
-  margin: 0 8px 0 0;
-  border-radius: 50%;
-  background-color: #71a5d9;
-}
-
-.subDetails {
-  display: grid;
-  grid-template-columns: 1fr 1fr 20px 20px 20px 1fr 1fr 20px 20px 20px 1fr 1fr;
-}
-
-.FAQContainer {
-  width: 1920px;
-  height: 1080px;
-  background-color: #e1e7ea;
-}
