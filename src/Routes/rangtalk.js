@@ -1,8 +1,7 @@
 import React from "react";
 import YoutubeAdvertisementArticle from "../commoncomponents/AdArticle.js";
-import theme from "../Colorcss";
-import SummaryArtice from "../commoncomponents/Summaryarticle.js";
-import SsamtalkFixedHeaderMenu from "../commoncomponents/Fixedheadermenu.js";
+import SummaryArtice from "../commoncomponents/SummaryArticle.js";
+import SsamtalkFixedHeaderMenu from "../commoncomponents/FixedHeaderMenu.js";
 
 function Rangtalk() {
   return (

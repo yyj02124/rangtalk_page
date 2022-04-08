@@ -1,6 +1,5 @@
-import { Box, Button, ThemeProvider } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import * as React from "react";
-import theme from "../Colorcss";
 
 const HeadMenuBtn = ({ color = "", variant = "", name }) => {
   // React.useEffect(() => {
@@ -8,55 +7,49 @@ const HeadMenuBtn = ({ color = "", variant = "", name }) => {
   //   console.log("test ::: variant ", variant);
   // }, [color, variant]);
   return (
-    <ThemeProvider theme={theme}>
-      <Button color={color} variant={variant}>
-        {name}
-      </Button>
-    </ThemeProvider>
+    <Button color={color} variant={variant}>
+      {name}
+    </Button>
   );
 };
 
 export const HeadLinkBtn = ({ color = "", variant = "", name }) => {
   return (
-    <ThemeProvider theme={theme}>
-      <Button
-        color={color}
-        variant={variant}
-        style={{ borderRadius: 50, marginLeft: 10, marginRight: 10 }}
-      >
-        {name}
-      </Button>
-    </ThemeProvider>
+    <Button
+      color={color}
+      variant={variant}
+      size="large"
+      style={{ borderRadius: 50, marginLeft: 10, marginRight: 10 }}
+    >
+      {name}
+    </Button>
   );
 };
 
-export const DownloadBtn = ({ color = "", variant = "", name }) => {
+export const DownloadBtn = ({ color = "", variant = "", onClick, name }) => {
   return (
-    <ThemeProvider theme={theme}>
-      <Button
-        size="large"
-        color={color}
-        variant={variant}
-        style={{
-          minWidth: 180,
-          height: 60,
-          marginRight: 10,
-        }}
-      >
-        {name}
-      </Button>
-    </ThemeProvider>
+    <Button
+      size="large"
+      color={color}
+      variant={variant}
+      onClick={onClick}
+      style={{
+        minWidth: 180,
+        height: 60,
+        marginRight: 10,
+      }}
+    >
+      {name}
+    </Button>
   );
 };
 
 export const Dot = ({ dotcolor = "" }) => {
   return (
-    <ThemeProvider theme={theme}>
-      <Box
-        bgcolor={dotcolor}
-        sx={{ width: "6px", height: "6px", borderRadius: "50%" }}
-      ></Box>
-    </ThemeProvider>
+    <Box
+      bgcolor={dotcolor}
+      sx={{ width: "6px", height: "6px", borderRadius: "50%" }}
+    ></Box>
   );
 };
 

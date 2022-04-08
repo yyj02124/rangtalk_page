@@ -1,4 +1,4 @@
-import { AppBar, Box, Button, Container, Divider, styled } from "@mui/material";
+import { Box, Container, Divider } from "@mui/material";
 import React from "react";
 import { Link as ScrollLink } from "react-scroll/modules";
 import { Link } from "react-router-dom";
@@ -43,7 +43,7 @@ const SsamtalkFixedHeaderMenu = ({
                 src={FulllogoImg}
               />
             </Box>
-            <div>
+            <Box>
               <ScrollLink to="1" spy={true} smooth={true}>
                 <HeadMenuBtn name="랑톡소개" />
               </ScrollLink>
@@ -57,14 +57,14 @@ const SsamtalkFixedHeaderMenu = ({
                   name="로그인"
                 />
               </Link>
-            </div>
+            </Box>
           </Box>
         </Container>
 
         <Divider></Divider>
 
         <Container>
-          <Box mt={1} display="flex" justifyContent="center">
+          <Box mt={2.5} display="flex" justifyContent="center">
             <HeadLinkBtn
               color={IrangLinkBtnColor}
               variant="contained"

@@ -1,0 +1,28 @@
+iframe {
+  z-index: 1;
+  margin-top: 202px;
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
+  max-height: 675px;
+  border: 1px solid #707070;
+}
+
+.FaqBox {
+  overflow: scroll;
+}
+.FaqBox::-webkit-scrollbar {
+  width: 10px;
+}
+.FaqBox::-webkit-scrollbar-thumb {
+  background-color: #d1d1d1;
+  border-radius: 10px;
+}
+.FaqBox::-webkit-scrollbar-track {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: inset 0px 0px 5px #fff;
+}

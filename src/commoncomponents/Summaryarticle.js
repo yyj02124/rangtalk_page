@@ -1,8 +1,6 @@
-import { Avatar, Box, Container, Typography } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import React from "react";
 import { DownloadBtn } from "../exportonly/Btn";
-import styles from "./summaryarticle.css";
-import theme from "../Colorcss";
 
 const SummaryArtice = ({ ImgBack = "" }) => {
   return (

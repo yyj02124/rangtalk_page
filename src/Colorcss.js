@@ -1,5 +1,4 @@
 import { createTheme } from "@mui/material";
-import * as React from "react";
 
 const theme = createTheme({
   palette: {
@@ -19,14 +18,14 @@ const theme = createTheme({
       contrastText: "#fff",
     },
     ssamtalklite: {
-      light: "#e9eff6",
+      light: "rgba(74,124,183,0.12)",
       main: "#4a7cb7",
     },
     ssamtalkdetail: {
-      main: "#f3f5f8",
+      main: "rgba(243,245,248,0.19)",
     },
     ssamtalkhighlight: {
-      main: "#e1f2f7",
+      main: "rgba(113,193,217,0.2)",
     },
     rangtalk: {
       main: "#5fc6be",

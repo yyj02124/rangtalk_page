@@ -12,7 +12,7 @@ function App() {
         <CssBaseline />
         <Routes>
           <Route path="/" element={<Navigate replace to="/ssamtalk" />} />
-          <Route path="/ssamtalk" element={<Ssamtalk />}></Route>
+          <Route path="/ssamtalk" element={<Ssamtalk />} />
           <Route path="/rangtalk" element={<Rangtalk />}></Route>
           <Route path="/login" element={<LoginPage />}></Route>
         </Routes>

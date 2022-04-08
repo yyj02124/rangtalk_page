@@ -1,11 +1,11 @@
 import React from "react";
-import theme from "../Colorcss";
-import SsamtalkFixedHeaderMenu from "../commoncomponents/Fixedheadermenu";
-import SummaryArtice from "../commoncomponents/Summaryarticle";
+import SsamtalkFixedHeaderMenu from "../commoncomponents/FixedHeaderMenu";
+import SummaryArtice from "../commoncomponents/SummaryArticle";
 import YoutubeAdvertisementArticle from "../commoncomponents/AdArticle";
-import DetailArticle from "../commoncomponents/Detailarticle";
+import DetailArticle from "../commoncomponents/DetailArticle";
 import FAQ from "../commoncomponents/Faq";
 import { SSAM_DETAIL_ARTICLE } from "../exportonly/Article";
+import ApiDownload from "../commoncomponents/ApiDownload";
 
 function Ssamtalk() {
   return (
@@ -21,6 +21,7 @@ function Ssamtalk() {
       <YoutubeAdvertisementArticle bgcolor="ssamtalklite.light" />
       <DetailArticle {...SSAM_DETAIL_ARTICLE} />
       <FAQ FAQbgcolor="FAQbgcolor.main" FAQnumber="01." />
+      <ApiDownload />
       <h1>Hello</h1>
     </div>
   );
