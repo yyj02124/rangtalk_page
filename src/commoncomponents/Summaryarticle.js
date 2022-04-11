@@ -1,5 +1,6 @@
 import { Box, Container, Typography } from "@mui/material";
 import React from "react";
+import { Link as ScrollLink } from "react-scroll/modules";
 import { DownloadBtn } from "../exportonly/Btn";
 
 const SummaryArtice = ({ ImgBack = "" }) => {
@@ -8,12 +9,13 @@ const SummaryArtice = ({ ImgBack = "" }) => {
       <Box
         zIndex={0}
         component="img"
-        sx={{ width: "100%", height: 1080 }}
+        maxHeight={1080}
+        sx={{ width: "100%", height: "100%" }}
         alt="img_back@2x.png"
         src={ImgBack}
       />
       <Container>
-        <Box position="absolute" mt={-100}>
+        <Box position="absolute" top={200}>
           <Typography variant="h4">
             쌤이<strong>랑</strong>, 학부모<strong>랑</strong>,아이
             <strong>랑</strong>
@@ -33,7 +35,9 @@ const SummaryArtice = ({ ImgBack = "" }) => {
             </Typography>
           </Box>
 
-          <DownloadBtn color="white" variant="contained" name="다운로드" />
+          <ScrollLink to="4" spy={true} smooth={true}>
+            <DownloadBtn color="white" variant="contained" name="다운로드" />
+          </ScrollLink>
           <DownloadBtn
             color="white"
             variant="contained"

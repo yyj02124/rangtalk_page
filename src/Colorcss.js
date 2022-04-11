@@ -8,6 +8,7 @@ const theme = createTheme({
     },
     black: {
       main: "#000",
+      contrastText: "#fff",
     },
     irangtalk: {
       main: "#a87cff",
@@ -34,8 +35,9 @@ const theme = createTheme({
     FAQbgcolor: {
       main: "#e1e7ea",
     },
-
-    tonalOffset: 0.2,
+    apidownbgcolor: {
+      main: "#f2f2f2",
+    },
   },
 });
 

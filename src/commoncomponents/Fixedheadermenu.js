@@ -11,6 +11,7 @@ import HeadMenuBtn, { HeadLinkBtn } from "../exportonly/Btn";
 // }));
 
 const SsamtalkFixedHeaderMenu = ({
+  refresh = "",
   FulllogoImg = "",
   LoginColor = "",
   IrangLinkBtnColor = "",
@@ -33,23 +34,33 @@ const SsamtalkFixedHeaderMenu = ({
             justifyContent="space-between"
           >
             <Box>
-              <img
-                style={{
-                  height: "22px",
-                  width: "106px",
-                  marginTop: "7px",
-                }}
-                alt="img_fulllogo_big@2x"
-                src={FulllogoImg}
-              />
+              <a href={refresh}>
+                <Box
+                  component="img"
+                  sx={{
+                    height: "22px",
+                    width: "106px",
+                    marginTop: "7px",
+                  }}
+                  alt="img_fulllogo_big@2x"
+                  src={FulllogoImg}
+                />
+              </a>
             </Box>
+
             <Box>
               <ScrollLink to="1" spy={true} smooth={true}>
                 <HeadMenuBtn name="랑톡소개" />
               </ScrollLink>
-              <HeadMenuBtn name="FAQ" />
-              <HeadMenuBtn name="다운로드" />
-              <HeadMenuBtn name="문의접수" />
+              <ScrollLink to="2" spy={true} smooth={true}>
+                <HeadMenuBtn name="FAQ" />
+              </ScrollLink>
+              <ScrollLink to="3" spy={true} smooth={true}>
+                <HeadMenuBtn name="문의접수" />
+              </ScrollLink>
+              <ScrollLink to="4" spy={true} smooth={true}>
+                <HeadMenuBtn name="다운로드" />
+              </ScrollLink>
               <Link to="/login" style={{ textDecoration: "none" }}>
                 <HeadMenuBtn
                   color={LoginColor}

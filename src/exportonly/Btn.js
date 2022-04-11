@@ -1,13 +1,43 @@
 import { Box, Button } from "@mui/material";
 import * as React from "react";
 
-const HeadMenuBtn = ({ color = "", variant = "", name }) => {
+const HeadMenuBtn = ({ color = "", variant = "", name, fullWidth = false }) => {
   // React.useEffect(() => {
   //   console.log("test ::: color ", color);
   //   console.log("test ::: variant ", variant);
   // }, [color, variant]);
   return (
-    <Button color={color} variant={variant}>
+    <Button color={color} variant={variant} fullWidth={fullWidth}>
+      {name}
+    </Button>
+  );
+};
+
+export const ContactUsBtn = ({
+  color = "",
+  variant = "",
+  name,
+  fullWidth = false,
+}) => {
+  // React.useEffect(() => {
+  //   console.log("test ::: color ", color);
+  //   console.log("test ::: variant ", variant);
+  // }, [color, variant]);
+  return (
+    <Button
+      sx={{ height: 60 }}
+      color={color}
+      variant={variant}
+      fullWidth={fullWidth}
+    >
+      {name}
+    </Button>
+  );
+};
+
+export const ApiDownMenuBtn = ({ color = "", variant = "", name }) => {
+  return (
+    <Button style={{ fontSize: "20px" }} color={color} variant={variant}>
       {name}
     </Button>
   );

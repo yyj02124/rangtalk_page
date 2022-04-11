@@ -7,6 +7,7 @@ function Rangtalk() {
   return (
     <div>
       <SsamtalkFixedHeaderMenu
+        refresh="/rangtalk"
         FulllogoImg="img/img_fulllogo1_big@2x.png"
         LoginColor="rangtalk"
         IrangLinkBtnColor="irangtalk"

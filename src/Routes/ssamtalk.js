@@ -6,11 +6,14 @@ import DetailArticle from "../commoncomponents/DetailArticle";
 import FAQ from "../commoncomponents/Faq";
 import { SSAM_DETAIL_ARTICLE } from "../exportonly/Article";
 import ApiDownload from "../commoncomponents/ApiDownload";
+import ContactUs from "../commoncomponents/ContactUs";
+import FooterCopyright from "../commoncomponents/FooterCopyright";
 
 function Ssamtalk() {
   return (
     <div>
       <SsamtalkFixedHeaderMenu
+        refresh="/"
         FulllogoImg="img/img_fulllogo_big@2x.png"
         LoginColor="ssamtalk"
         IrangLinkBtnColor="irangtalk"
@@ -21,8 +24,14 @@ function Ssamtalk() {
       <YoutubeAdvertisementArticle bgcolor="ssamtalklite.light" />
       <DetailArticle {...SSAM_DETAIL_ARTICLE} />
       <FAQ FAQbgcolor="FAQbgcolor.main" FAQnumber="01." />
-      <ApiDownload />
-      <h1>Hello</h1>
+      <ContactUs />
+      <ApiDownload
+        apiDownBgColor="apidownbgcolor.main"
+        imgBottomPhone="./img/img_bottom_phone_02@2x.png"
+        apiDownTitle="쌤이랑톡"
+        manualDownloadColor="ssamtalk"
+      />
+      <FooterCopyright footerbgcolor="black.main" />
     </div>
   );
 }
