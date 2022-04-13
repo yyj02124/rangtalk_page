@@ -21,6 +21,7 @@ const theme = createTheme({
     ssamtalklite: {
       light: "rgba(74,124,183,0.12)",
       main: "#4a7cb7",
+      contrastText: "#fff",
     },
     ssamtalkdetail: {
       main: "rgba(243,245,248,0.19)",

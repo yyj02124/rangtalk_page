@@ -12,9 +12,9 @@ import MuiAccordion from "@mui/material/Accordion";
 import FaqAccordion from "../exportonly/FaqAccordion";
 import { FIRST_FAQ } from "../exportonly/Article";
 
-const FAQ = ({ FAQbgcolor = "" }) => {
+const FAQ = ({ faqBgColor = "" }) => {
   return (
-    <Box bgcolor={FAQbgcolor} position="relative" height={1080}>
+    <Box bgcolor={faqBgColor} position="relative" height={1080}>
       <Container>
         <div id="2">
           <Typography>랑톡의 FAQ</Typography>

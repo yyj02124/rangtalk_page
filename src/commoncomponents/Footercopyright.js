@@ -1,9 +1,9 @@
 import { Box, Container, Typography } from "@mui/material";
 import React from "react";
 
-const FooterCopyright = ({ footerbgcolor = "" }) => {
+const FooterCopyright = ({ footerBgColor = "" }) => {
   return (
-    <Box bgcolor={footerbgcolor}>
+    <Box bgcolor={footerBgColor}>
       <Container>
         <Box>
           <Box

@@ -1,23 +1,30 @@
-import { Box, Container, Divider } from "@mui/material";
+import {
+  Box,
+  Container,
+  Divider,
+  getNativeSelectUtilityClasses,
+} from "@mui/material";
 import React from "react";
 import { Link as ScrollLink } from "react-scroll/modules";
 import { Link } from "react-router-dom";
 import { StyledAppBar } from "../exportonly/Css";
 import HeadMenuBtn, { HeadLinkBtn } from "../exportonly/Btn";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 // const StyledAppBar = styled(AppBar)(({ theme }) => ({
 //   backgroundColor: "#fff",
 //   color: "#000",
 // }));
 
-const SsamtalkFixedHeaderMenu = ({
+const FixedHeaderMenu = ({
   refresh = "",
-  FulllogoImg = "",
-  LoginColor = "",
-  IrangLinkBtnColor = "",
-  SsamLinkBtnColor = "",
-  RangLinkBtnColor = "",
+  fullLogoImg = "",
+  loginColor = "",
+  irangLinkBtnColor = "",
+  ssamLinkBtnColor = "",
+  rangLinkBtnColor = "",
 }) => {
+  const matches = useMediaQuery("(min-width:600px)");
   return (
     <div>
       <StyledAppBar
@@ -43,12 +50,12 @@ const SsamtalkFixedHeaderMenu = ({
                     marginTop: "7px",
                   }}
                   alt="img_fulllogo_big@2x"
-                  src={FulllogoImg}
+                  src={fullLogoImg}
                 />
               </a>
             </Box>
 
-            <Box>
+            <Box sx={matches ? { display: "null" } : { display: "none" }}>
               <ScrollLink to="1" spy={true} smooth={true}>
                 <HeadMenuBtn name="랑톡소개" />
               </ScrollLink>
@@ -63,7 +70,7 @@ const SsamtalkFixedHeaderMenu = ({
               </ScrollLink>
               <Link to="/login" style={{ textDecoration: "none" }}>
                 <HeadMenuBtn
-                  color={LoginColor}
+                  color={loginColor}
                   variant="contained"
                   name="로그인"
                 />
@@ -77,20 +84,20 @@ const SsamtalkFixedHeaderMenu = ({
         <Container>
           <Box mt={2.5} display="flex" justifyContent="center">
             <HeadLinkBtn
-              color={IrangLinkBtnColor}
+              color={irangLinkBtnColor}
               variant="contained"
               name="아이랑톡"
             />
             <Link to="/ssamtalk" style={{ textDecoration: "none" }}>
               <HeadLinkBtn
-                color={SsamLinkBtnColor}
+                color={ssamLinkBtnColor}
                 variant="contained"
                 name="쌤이랑톡"
               />
             </Link>
             <Link to="/rangtalk" style={{ textDecoration: "none" }}>
               <HeadLinkBtn
-                color={RangLinkBtnColor}
+                color={rangLinkBtnColor}
                 variant="contained"
                 name="학교랑톡"
               />
@@ -102,4 +109,4 @@ const SsamtalkFixedHeaderMenu = ({
   );
 };
 
-export default SsamtalkFixedHeaderMenu;
+export default FixedHeaderMenu;

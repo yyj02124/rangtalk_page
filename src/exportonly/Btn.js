@@ -1,4 +1,4 @@
-import { Box, Button } from "@mui/material";
+import { Box, Button, useMediaQuery } from "@mui/material";
 import * as React from "react";
 
 const HeadMenuBtn = ({ color = "", variant = "", name, fullWidth = false }) => {
@@ -35,9 +35,23 @@ export const ContactUsBtn = ({
   );
 };
 
-export const ApiDownMenuBtn = ({ color = "", variant = "", name }) => {
+export const ApiDownMenuBtn = ({
+  id = "",
+  btnColor = "",
+  variant = "",
+  name,
+  onClickBtn,
+  value = "",
+}) => {
   return (
-    <Button style={{ fontSize: "20px" }} color={color} variant={variant}>
+    <Button
+      value={value}
+      onClick={onClickBtn}
+      id={id}
+      color={btnColor}
+      style={{ fontSize: "20px" }}
+      variant={variant}
+    >
       {name}
     </Button>
   );
@@ -64,7 +78,7 @@ export const DownloadBtn = ({ color = "", variant = "", onClick, name }) => {
       variant={variant}
       onClick={onClick}
       style={{
-        minWidth: 180,
+        minWidth: 160,
         height: 60,
         marginRight: 10,
       }}
@@ -74,11 +88,16 @@ export const DownloadBtn = ({ color = "", variant = "", onClick, name }) => {
   );
 };
 
-export const Dot = ({ dotcolor = "" }) => {
+export const Dot = ({ dotColor = "" }) => {
+  const matches = useMediaQuery("(min-width:600px)");
   return (
     <Box
-      bgcolor={dotcolor}
-      sx={{ width: "6px", height: "6px", borderRadius: "50%" }}
+      bgcolor={dotColor}
+      sx={
+        matches
+          ? { width: "6px", height: "6px", borderRadius: "50%" }
+          : { display: "none" }
+      }
     ></Box>
   );
 };
