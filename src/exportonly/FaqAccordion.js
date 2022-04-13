@@ -4,6 +4,7 @@ import {
   Box,
   styled,
   Typography,
+  useMediaQuery,
 } from "@mui/material";
 import MuiAccordion from "@mui/material/Accordion";
 import React, { useState } from "react";
@@ -24,32 +25,69 @@ const FaqAccordion = ({
   faqNumber = "",
   faqAccordionSummary = "",
   faqAccordionDetail = "",
+  faqNumberColor = "",
+  faqPlusImage = "",
+  faqMinusImage = "",
 }) => {
   const [open, setOpen] = useState(false);
   const toggleAccordion = () => {
     setOpen(!open);
   };
+  const matches = useMediaQuery("(min-width:600px)");
   return (
     <Accordion onChange={toggleAccordion}>
-      <AccordionSummary aria-controls="panel1d-content">
+      <AccordionSummary
+        sx={{ paddingTop: 1, paddingBottom: 1 }}
+        aria-controls="panel1d-content"
+      >
         <Box
           component="img"
           mr={2}
-          sx={{ width: "20px", height: "20px" }}
+          sx={matches ? { width: "20px", height: "20px" } : { display: "none" }}
           alt="ic_faq1"
           src={
             //이미지 props를 넣고 아래 3항연산자를 옮겨준다.
-            open !== true
-              ? "./img/ic_faq_list_n@2x.png"
-              : "./img/ic_faq_list_s@2x.png"
+            open !== true ? faqPlusImage : faqMinusImage
           }
         />
-        <Typography>
-          {faqNumber}. {faqAccordionSummary}
+        <Typography
+          fontFamily="Noto Sans KR"
+          fontWeight="bold"
+          color={faqNumberColor}
+        >
+          {faqNumber}.
         </Typography>
+        <Typography fontFamily="Noto Sans KR" fontWeight="bold">
+          {faqAccordionSummary}
+        </Typography>
+        <Box>
+          <Box
+            component="img"
+            sx={
+              matches
+                ? { display: "none" }
+                : {
+                    display: "block",
+                    width: "20px",
+                    height: "20px",
+                  }
+            }
+            alt="ic_faq1"
+            src={
+              //이미지 props를 넣고 아래 3항연산자를 옮겨준다.
+              open !== true ? faqPlusImage : faqMinusImage
+            }
+          />
+        </Box>
       </AccordionSummary>
       <AccordionDetails>
-        <Typography>{faqAccordionDetail}</Typography>
+        <Typography
+          ml={matches ? "32px" : 0}
+          fontFamily="Noto Sans KR"
+          color="#4a4a4a"
+        >
+          {faqAccordionDetail}
+        </Typography>
       </AccordionDetails>
     </Accordion>
   );

@@ -30,6 +30,7 @@ const theme = createTheme({
       main: "rgba(113,193,217,0.2)",
     },
     rangtalk: {
+      light: "rgba(51,171,161,0.12)",
       main: "#5fc6be",
       contrastText: "#fff",
     },

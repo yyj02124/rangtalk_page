@@ -7,7 +7,12 @@ const HeadMenuBtn = ({ color = "", variant = "", name, fullWidth = false }) => {
   //   console.log("test ::: variant ", variant);
   // }, [color, variant]);
   return (
-    <Button color={color} variant={variant} fullWidth={fullWidth}>
+    <Button
+      sx={{ fontFamily: "Noto Sans KR" }}
+      color={color}
+      variant={variant}
+      fullWidth={fullWidth}
+    >
       {name}
     </Button>
   );
@@ -25,7 +30,7 @@ export const ContactUsBtn = ({
   // }, [color, variant]);
   return (
     <Button
-      sx={{ height: 60 }}
+      sx={{ height: 60, fontFamily: "Noto Sans KR" }}
       color={color}
       variant={variant}
       fullWidth={fullWidth}
@@ -45,11 +50,17 @@ export const ApiDownMenuBtn = ({
 }) => {
   return (
     <Button
+      sx={{
+        borderRadius: "0%",
+        borderBottom: "1px solid black",
+        fontFamily: "Noto Sans KR",
+        fontSize: "18px",
+        padding: "0",
+      }}
       value={value}
       onClick={onClickBtn}
       id={id}
       color={btnColor}
-      style={{ fontSize: "20px" }}
       variant={variant}
     >
       {name}
@@ -58,12 +69,14 @@ export const ApiDownMenuBtn = ({
 };
 
 export const HeadLinkBtn = ({ color = "", variant = "", name }) => {
+  const matches = useMediaQuery("(min-width:600px)");
   return (
     <Button
+      sx={{ fontFamily: "Noto Sans KR" }}
       color={color}
       variant={variant}
-      size="large"
-      style={{ borderRadius: 50, marginLeft: 10, marginRight: 10 }}
+      size={matches ? "large" : "medium"}
+      style={{ borderRadius: 50, marginLeft: 5, marginRight: 5 }}
     >
       {name}
     </Button>
@@ -73,14 +86,14 @@ export const HeadLinkBtn = ({ color = "", variant = "", name }) => {
 export const DownloadBtn = ({ color = "", variant = "", onClick, name }) => {
   return (
     <Button
+      sx={{ fontFamily: "Noto Sans KR" }}
       size="large"
       color={color}
       variant={variant}
       onClick={onClick}
       style={{
-        minWidth: 160,
+        minWidth: 150,
         height: 60,
-        marginRight: 10,
       }}
     >
       {name}
@@ -92,6 +105,8 @@ export const Dot = ({ dotColor = "" }) => {
   const matches = useMediaQuery("(min-width:600px)");
   return (
     <Box
+      ml="3px"
+      mr="3px"
       bgcolor={dotColor}
       sx={
         matches

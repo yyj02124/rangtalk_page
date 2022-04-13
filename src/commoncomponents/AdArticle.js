@@ -9,7 +9,7 @@ const YoutubeAdvertisementArticle = ({ bgColor = "" }) => {
       <Container>
         <Box mt={-1} position="relative" height={matches ? 1080 : 300}>
           <iframe
-            style={{ top: matches ? "20%" : "0%" }}
+            style={{ top: matches ? "15%" : "0%" }}
             src="https://www.youtube.com/embed/K8qE0Ved5ZI"
           />
         </Box>

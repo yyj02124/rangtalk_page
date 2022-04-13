@@ -1,6 +1,7 @@
 import { Box, Container, Grid, Typography, useMediaQuery } from "@mui/material";
 import React from "react";
 import { Dot } from "../exportonly/Btn";
+import PropTypes from "prop-types";
 import MediaQuery from "../exportonly/MediaQuery";
 //cssmodule이랑 css차이 mui랑 css모듈 같이 쓸수 있는가?
 //빌드 하면 차이는? =>빌드해보고 output찾아내기
@@ -11,23 +12,23 @@ import MediaQuery from "../exportonly/MediaQuery";
 //hoisting->함수 선언과 정의 차이 hoist= 선언이 hoist로 상부로 올라간다 this?
 
 const DetailArticle = ({
-  imgMockup = "",
-  article1 = "",
-  articleTitle = "",
-  articleTitleColor = "",
-  articleDetailMain = "",
-  articleImg04Title = "",
-  articleImg04Body = "",
-  articleImg05Title = "",
-  articleImg05Body = "",
-  articleImg06Title = "",
-  articleImg06Body = "",
-  imgSub04 = "",
-  imgSub05 = "",
-  imgSub06 = "",
-  bgColor = "",
-  bgHighlight = "",
-  dotColor = "",
+  imgMockup,
+  article1,
+  articleTitle,
+  articleTitleColor,
+  articleDetailMain,
+  articleImg04Title,
+  articleImg04Body,
+  articleImg05Title,
+  articleImg05Body,
+  articleImg06Title,
+  articleImg06Body,
+  imgSub04,
+  imgSub05,
+  imgSub06,
+  bgColor,
+  bgHighlight,
+  dotColor,
 }) => {
   const matches = useMediaQuery("(min-width:600px)");
   return (
@@ -52,10 +53,11 @@ const DetailArticle = ({
                     position={"absolute"}
                     mt={0.4}
                     bgcolor={bgHighlight}
-                    sx={{ width: "200px", height: "20px" }}
+                    sx={{ width: "180px", height: "20px" }}
                   />
                   <Box position={"relative"}>
                     <Typography
+                      fontFamily="Noto Sans KR"
                       sx={{ width: "200px", lineHeight: 1.2 }}
                       fontSize="20px"
                       color="#000"
@@ -63,10 +65,18 @@ const DetailArticle = ({
                       {article1}
                     </Typography>
                   </Box>
-                  <Typography color={articleTitleColor} variant="h2">
+                  <Typography
+                    fontFamily="Noto Sans KR"
+                    fontWeight="bold"
+                    color={articleTitleColor}
+                    fontSize="50px"
+                    sx={{ lineHeight: "1.2" }}
+                  >
                     {articleTitle}
                   </Typography>
-                  <Typography>{articleDetailMain}</Typography>
+                  <Typography fontFamily="Noto Sans KR" mt={5} width="331px">
+                    {articleDetailMain}
+                  </Typography>
                 </Box>
               </Box>
             </Box>
@@ -75,21 +85,24 @@ const DetailArticle = ({
       </div>
       <Container>
         <Box
-          sx={{ placeItems: "center", maxWidth: "1152px" }}
+          sx={{
+            placeItems: "center",
+            maxWidth: "1152px",
+          }}
           display="grid"
+          gap={6}
           // gridTemplateColumns={
           //   "1fr 1fr 18px 18px 18px 1fr 1fr 18px 18px 18px 1fr 1fr"
           // }
           {...(matches
             ? {
-                gridTemplateColumns:
-                  "1fr 18px 18px 18px 1fr 18px 18px 18px 1fr ",
+                gridTemplateColumns: "1fr 54px 1fr 54px 1fr ",
               }
-            : { gridTemplateRows: "1fr 1fr 1fr" })}
+            : { gridTemplateRows: "1fr1fr1fr" })}
           position="absolute"
-          mt={matches ? -30 : -100}
+          mt={matches ? -30 : -80}
         >
-          <Box sx={{ placeItems: "center" }} display={"flex"}>
+          <Box sx={{ placeItems: "center" }} display="flex">
             <Box
               component="img"
               sx={{ width: 120, height: 120 }}
@@ -97,7 +110,7 @@ const DetailArticle = ({
               src={imgSub04}
             />
             <Box>
-              <Typography>
+              <Typography fontFamily="Noto Sans KR" width={154}>
                 <strong>
                   {articleImg04Title}
                   <br />
@@ -106,9 +119,11 @@ const DetailArticle = ({
               </Typography>
             </Box>
           </Box>
-          <Dot dotColor={dotColor} />
-          <Dot dotColor={dotColor} />
-          <Dot dotColor={dotColor} />
+          <Box display="flex">
+            <Dot dotColor={dotColor} />
+            <Dot dotColor={dotColor} />
+            <Dot dotColor={dotColor} />
+          </Box>
           <Box sx={{ placeItems: "center" }} display={"flex"}>
             <Box
               component="img"
@@ -117,7 +132,7 @@ const DetailArticle = ({
               src={imgSub05}
             />
             <Box>
-              <Typography>
+              <Typography fontFamily="Noto Sans KR" width={154}>
                 <strong>
                   {articleImg05Title}
                   <br />
@@ -126,9 +141,11 @@ const DetailArticle = ({
               </Typography>
             </Box>
           </Box>
-          <Dot dotColor={dotColor} />
-          <Dot dotColor={dotColor} />
-          <Dot dotColor={dotColor} />
+          <Box display="flex">
+            <Dot dotColor={dotColor} />
+            <Dot dotColor={dotColor} />
+            <Dot dotColor={dotColor} />
+          </Box>
           <Box sx={{ placeItems: "center" }} display={"flex"}>
             <Box
               component="img"
@@ -137,7 +154,7 @@ const DetailArticle = ({
               src={imgSub06}
             />
             <Box>
-              <Typography>
+              <Typography fontFamily="Noto Sans KR" width={154}>
                 <strong>
                   {articleImg06Title}
                   <br />
@@ -150,6 +167,26 @@ const DetailArticle = ({
       </Container>
     </Box>
   );
+};
+
+DetailArticle.propTypes = {
+  imgMockup: PropTypes.string,
+  article1: PropTypes.string,
+  articleTitle: PropTypes.string,
+  articleTitleColor: PropTypes.string,
+  articleDetailMain: PropTypes.array,
+  articleImg04Title: PropTypes.string,
+  articleImg04Body: PropTypes.string,
+  articleImg05Title: PropTypes.string,
+  articleImg05Body: PropTypes.string,
+  articleImg06Title: PropTypes.string,
+  articleImg06Body: PropTypes.string,
+  imgSub04: PropTypes.string,
+  imgSub05: PropTypes.string,
+  imgSub06: PropTypes.string,
+  bgColor: PropTypes.string,
+  bgHighlight: PropTypes.string,
+  dotColor: PropTypes.string,
 };
 
 export default DetailArticle;

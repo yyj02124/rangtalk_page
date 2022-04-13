@@ -1,4 +1,4 @@
-import { Box, Container } from "@mui/material";
+import { Box } from "@mui/material";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { DownloadBtn } from "../exportonly/Btn";
@@ -31,23 +31,21 @@ const CallAPI = () => {
   }, []);
 
   return (
-    <Container>
-      <Box display="flex" mt={10} ml={-3}>
-        <DownloadBtn
-          onClick={onClickAndroidDownloadBtn}
-          color="white"
-          variant="contained"
-          name="google"
-        ></DownloadBtn>
+    <Box display="flex" justifyContent="space-evenly" mt={1}>
+      <DownloadBtn
+        onClick={onClickAndroidDownloadBtn}
+        color="white"
+        variant="contained"
+        name="google"
+      ></DownloadBtn>
 
-        <DownloadBtn
-          onClick={onClickIosDownloadBtn}
-          color="white"
-          variant="contained"
-          name="apple"
-        ></DownloadBtn>
-      </Box>
-    </Container>
+      <DownloadBtn
+        onClick={onClickIosDownloadBtn}
+        color="white"
+        variant="contained"
+        name="apple"
+      ></DownloadBtn>
+    </Box>
   );
 };
 

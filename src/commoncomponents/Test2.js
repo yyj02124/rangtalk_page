@@ -1,14 +1,17 @@
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Container, Typography, useMediaQuery } from "@mui/material";
 import React, { useState } from "react";
 import HeadMenuBtn, { ApiDownMenuBtn } from "../exportonly/Btn";
 import PropTypes from "prop-types";
 import CallAPI from "./CallAPI";
-import { width } from "@mui/system";
+import { display, width } from "@mui/system";
 const Test2 = ({
   apiDownBgColor,
   bgImg1,
   bgImg2,
   bgImg3,
+  bgMobileImg1,
+  bgMobileImg2,
+  bgMobileImg3,
   ssamtakManualColor1,
   ssamtakManualColor2,
   ssamtakManualColor3,
@@ -18,6 +21,9 @@ const Test2 = ({
   apiDownloadTitle1,
   apiDownloadTitle2,
   apiDownloadTitle3,
+  ssamtakManualExplain1,
+  ssamtakManualExplain2,
+  ssamtakManualExplain3,
   ssamtakManual1,
   ssamtakManual2,
   ssamtakManual3,
@@ -30,102 +36,137 @@ const Test2 = ({
     setHandle(event.target.value);
   };
 
-  return (
-    <Box
-      bgcolor={apiDownBgColor}
-      sx={
-        handle === "0"
-          ? { backgroundImage: bgImg1, backgroundSize: "cover" }
-          : handle === "1"
-          ? { backgroundImage: bgImg2, backgroundSize: "cover" }
-          : { backgroundImage: bgImg3, backgroundSize: "cover" }
-      }
-      width="100%"
-      height={1080}
-      mt={13}
-      position="relative"
-    >
-      <Container>
-        <Box width={330}>
-          <Box>
-            <ApiDownMenuBtn
-              onClickBtn={count}
-              value="0"
-              name="test1"
-              btnColor={ssamtakManualColor1}
-              variant="contained"
-            />
-            <ApiDownMenuBtn
-              onClickBtn={count}
-              value="1"
-              name="test2"
-              btnColor={ssamtakManualColor2}
-              variant="contained"
-            />
-            <ApiDownMenuBtn
-              onClickBtn={count}
-              value="2"
-              name="test3"
-              btnColor={ssamtakManualColor3}
-              variant="contained"
-            />
-          </Box>
+  const matches = useMediaQuery("(min-width:600px)");
 
-          <Box display="flex">
-            <Typography
-              variant="h2"
-              color={
-                handle === "0"
-                  ? apiDownloadTitleColor1
+  return (
+    <div id="4">
+      <Box
+        bgcolor={apiDownBgColor}
+        sx={
+          handle === "0"
+            ? { backgroundImage: bgImg1, backgroundSize: "cover" }
+            : handle === "1"
+            ? { backgroundImage: bgImg2, backgroundSize: "cover" }
+            : { backgroundImage: bgImg3, backgroundSize: "cover" }
+        }
+        width="100%"
+        height={1080}
+        // mt={13}
+        position="relative"
+      >
+        <Container>
+          <Box position="absolute" mt={"10%"}>
+            <Box display="flex" justifyContent="space-evenly">
+              <ApiDownMenuBtn
+                onClickBtn={count}
+                value="0"
+                name="아이랑톡"
+                btnColor={ssamtakManualColor1}
+              />
+              <ApiDownMenuBtn
+                onClickBtn={count}
+                value="1"
+                name="쌤이랑톡"
+                btnColor={ssamtakManualColor2}
+              />
+              <ApiDownMenuBtn
+                onClickBtn={count}
+                value="2"
+                name="학교랑톡"
+                btnColor={ssamtakManualColor3}
+              />
+            </Box>
+
+            <Box display="flex" mt={"50%"}>
+              <Typography
+                fontFamily="Noto Sans KR"
+                fontWeight="bold"
+                variant="h2"
+                marginRight="8px"
+                color={
+                  handle === "0"
+                    ? apiDownloadTitleColor1
+                    : handle === "1"
+                    ? apiDownloadTitleColor2
+                    : apiDownloadTitleColor3
+                }
+              >
+                {handle === "0"
+                  ? apiDownloadTitle1
                   : handle === "1"
-                  ? apiDownloadTitleColor2
-                  : apiDownloadTitleColor3
-              }
-            >
+                  ? apiDownloadTitle2
+                  : apiDownloadTitle3}
+              </Typography>
+              <Box
+                component="img"
+                sx={
+                  handle === "0"
+                    ? { width: 270, height: 95, marginTop: "-23px" }
+                    : { width: 50, height: 50 }
+                }
+                alt="img_bottom_logo"
+                src={
+                  handle === "0"
+                    ? imgBottomLogo1
+                    : handle === "1"
+                    ? imgBottomLogo2
+                    : imgBottomLogo3
+                }
+              />
+            </Box>
+            <Typography fontFamily="Noto Sans KR" fontSize={20} width={293}>
               {handle === "0"
-                ? apiDownloadTitle1
+                ? ssamtakManualExplain1
                 : handle === "1"
-                ? apiDownloadTitle2
-                : apiDownloadTitle3}
+                ? ssamtakManualExplain2
+                : ssamtakManualExplain3}
             </Typography>
+
             <Box
               component="img"
-              sx={{ width: 50, height: 50 }}
-              alt="img_bottom_logo"
+              sx={
+                matches
+                  ? { display: "none" }
+                  : {
+                      width: "100%",
+                      height: 341,
+                    }
+              }
+              alt="bgMobileImg"
               src={
-                handle === "0"
-                  ? imgBottomLogo1
+                matches
+                  ? null
+                  : handle === "0"
+                  ? bgMobileImg1
                   : handle === "1"
-                  ? imgBottomLogo2
-                  : imgBottomLogo3
+                  ? bgMobileImg2
+                  : bgMobileImg3
               }
             />
+
+            <HeadMenuBtn
+              color={
+                handle === "0"
+                  ? ssamtakManualColor1
+                  : handle === "1"
+                  ? ssamtakManualColor2
+                  : ssamtakManualColor3
+              }
+              fullWidth={true}
+              variant="contained"
+              name={
+                handle === "0"
+                  ? ssamtakManual1
+                  : handle === "1"
+                  ? ssamtakManual2
+                  : ssamtakManual3
+              }
+            />
+            <CallAPI />
           </Box>
-          <Typography>
-            아이와 학부모를 위한 양방향 소통 앱 쌤이랑 톡입니다.
-          </Typography>
-          <HeadMenuBtn
-            color={
-              handle === "0"
-                ? ssamtakManualColor1
-                : handle === "1"
-                ? ssamtakManualColor2
-                : ssamtakManualColor3
-            }
-            fullWidth={true}
-            variant="contained"
-            name={
-              handle === "0"
-                ? ssamtakManual1
-                : handle === "1"
-                ? ssamtakManual2
-                : ssamtakManual3
-            }
-          />
-          <CallAPI />
-        </Box>
-      </Container>
-    </Box>
+        </Container>
+      </Box>
+    </div>
   );
 };
 
@@ -143,6 +184,9 @@ Test2.propTypes = {
   apiDownloadTitle1: PropTypes.string,
   apiDownloadTitle2: PropTypes.string,
   apiDownloadTitle3: PropTypes.string,
+  ssamtakManualExplain1: PropTypes.string,
+  ssamtakManualExplain2: PropTypes.string,
+  ssamtakManualExplain3: PropTypes.string,
   ssamtakManual1: PropTypes.string,
   ssamtakManual2: PropTypes.string,
   ssamtakManual3: PropTypes.string,

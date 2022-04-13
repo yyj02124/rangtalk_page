@@ -5,28 +5,67 @@ import {
   Container,
   styled,
   Typography,
+  useMediaQuery,
 } from "@mui/material";
 import React, { useState } from "react";
 import "./youtube&scrollbar.css";
 import MuiAccordion from "@mui/material/Accordion";
 import FaqAccordion from "../exportonly/FaqAccordion";
-import { FIRST_FAQ } from "../exportonly/Article";
+import {
+  FAQ1,
+  FAQ2,
+  FAQ3,
+  FAQ4,
+  FAQ5,
+  FAQ6,
+  FAQ7,
+  FAQ8,
+  FAQ9,
+  FAQ10,
+  FAQ11,
+  FAQ12,
+  FAQ13,
+  FAQ14,
+} from "../exportonly/RangFaqList";
 
 const FAQ = ({ faqBgColor = "" }) => {
+  const matches = useMediaQuery("(min-width:600px)");
   return (
-    <Box bgcolor={faqBgColor} position="relative" height={1080}>
+    <Box
+      bgcolor={faqBgColor}
+      position="relative"
+      height={matches ? 1080 : 960}
+      pt={matches ? 15 : 9}
+    >
       <Container>
         <div id="2">
-          <Typography>랑톡의 FAQ</Typography>
+          <Typography fontFamily="Noto Sans KR">랑톡의 FAQ</Typography>
         </div>
 
-        <Typography>자주묻는 질문</Typography>
-        <Box className="FaqBox" mt={10} p={5} bgcolor="#fff" height={681}>
-          <FaqAccordion {...FIRST_FAQ}></FaqAccordion>
-          <FaqAccordion {...FIRST_FAQ}></FaqAccordion>
-          <FaqAccordion {...FIRST_FAQ}></FaqAccordion>
-          <FaqAccordion {...FIRST_FAQ}></FaqAccordion>
-          <FaqAccordion {...FIRST_FAQ}></FaqAccordion>
+        <Typography fontFamily="Noto Sans KR" fontSize="56px">
+          자주묻는 질문
+        </Typography>
+        <Box
+          className="FaqBox"
+          mt={3}
+          p={matches ? 5 : 1}
+          bgcolor="#fff"
+          height={681}
+        >
+          <FaqAccordion {...FAQ1}></FaqAccordion>
+          <FaqAccordion {...FAQ2}></FaqAccordion>
+          <FaqAccordion {...FAQ3}></FaqAccordion>
+          <FaqAccordion {...FAQ4}></FaqAccordion>
+          <FaqAccordion {...FAQ5}></FaqAccordion>
+          <FaqAccordion {...FAQ6}></FaqAccordion>
+          <FaqAccordion {...FAQ7}></FaqAccordion>
+          <FaqAccordion {...FAQ8}></FaqAccordion>
+          <FaqAccordion {...FAQ9}></FaqAccordion>
+          <FaqAccordion {...FAQ10}></FaqAccordion>
+          <FaqAccordion {...FAQ11}></FaqAccordion>
+          <FaqAccordion {...FAQ12}></FaqAccordion>
+          <FaqAccordion {...FAQ13}></FaqAccordion>
+          <FaqAccordion {...FAQ14}></FaqAccordion>
         </Box>
       </Container>
     </Box>

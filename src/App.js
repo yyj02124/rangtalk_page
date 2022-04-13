@@ -13,8 +13,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Navigate replace to="/ssamtalk" />} />
           <Route path="/ssamtalk" element={<Ssamtalk />} />
-          <Route path="/rangtalk" element={<Rangtalk />}></Route>
-          <Route path="/login" element={<LoginPage />}></Route>
+          <Route path="/rangtalk" element={<Rangtalk />} />
+          <Route path="/login" element={<LoginPage />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>
