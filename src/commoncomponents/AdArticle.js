@@ -2,7 +2,9 @@ import { Box, Container, useMediaQuery } from "@mui/material";
 import React from "react";
 import "./youtube&scrollbar.css";
 
-const YoutubeAdvertisementArticle = ({ bgColor = "" }) => {
+import PropTypes from "prop-types";
+
+const YoutubeAdvertisementArticle = ({ bgColor}) => {
   const matches = useMediaQuery("(min-width:600px)");
   return (
     <Box bgcolor={bgColor} position="relative" height={matches ? 1080 : 300}>
@@ -22,6 +24,12 @@ const YoutubeAdvertisementArticle = ({ bgColor = "" }) => {
     //   </div>
     // </div>
   );
+};
+
+YoutubeAdvertisementArticle.propTypes = {
+
+  bgColor:PropTypes.string,
+
 };
 
 export default YoutubeAdvertisementArticle;

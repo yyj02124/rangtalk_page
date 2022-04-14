@@ -1,4 +1,3 @@
-import { valueToPercent } from "@mui/base";
 import {
   Box,
   Container,
@@ -6,11 +5,11 @@ import {
   Typography,
   useMediaQuery,
 } from "@mui/material";
-import { height } from "@mui/system";
 import React, { useState } from "react";
-import HeadMenuBtn, { ContactUsBtn } from "../exportonly/Btn";
+import { ContactUsBtn } from "../exportonly/Btn";
+import PropTypes from "prop-types";
 
-const ContactUs = ({ btnColor = "" }) => {
+const ContactUs = ({ btnColor }) => {
   const [count, setCount] = useState("");
   const onChange = (event) => {
     setCount(event.target.value);
@@ -149,6 +148,7 @@ const ContactUs = ({ btnColor = "" }) => {
                 placeholder="2000자까지 입력가능합니다."
                 fullWidth
                 onChange={onChange}
+                inputProps={{ maxLength: 2000 }}
               />
               <Typography>{abc}/2000</Typography>
             </Box>
@@ -209,6 +209,12 @@ const ContactUs = ({ btnColor = "" }) => {
       </Box>
     </div>
   );
+};
+
+ContactUs.propTypes = {
+
+  btnColor:PropTypes.string,
+
 };
 
 export default ContactUs;

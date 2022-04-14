@@ -15,7 +15,7 @@ export const ApiDownloadComponent = {
   apiDownloadTitle1: "",
   apiDownloadTitle2: "쌤이랑톡",
   apiDownloadTitle3: "학교랑톡",
-  ssamtakManualExplain1: "[우리아이 등하굣길 안심 알림서비스]",
+  ssamtakManualExplain1: ["우리아이 등하굣길 안심",<br/> ,"알림서비스"],
   ssamtakManualExplain2: "아이와 학부모를 위한 양방향 소통앱 쌤이랑톡 입니다.",
   ssamtakManualExplain3: "학교와 선생님을 위한 양방향 소통앱 학교랑톡입니다.",
   ssamtakManual1: "아이랑톡메뉴얼다운로드",
@@ -25,4 +25,6 @@ export const ApiDownloadComponent = {
   imgBottomLogo2: "./img/img_bottom_logo_2@2x.png",
   imgBottomLogo3: "./img/img_bottom_logo_3@2x.png",
   ssamtakManualColor: "ssamtalk",
+  rangMenual:"url('./downloadfile/KT_학교랑톡_사용자_매뉴얼_V1.4_20210813.pdf')",
+  ssamMenual:"url('./downloadfile/KT_쌤이랑톡_사용자_매뉴얼_V1.4_20210813.pdf')",
 };

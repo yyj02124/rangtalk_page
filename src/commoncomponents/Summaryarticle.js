@@ -1,9 +1,10 @@
 import { Box, Container, Typography, useMediaQuery } from "@mui/material";
 import React from "react";
 import { Link as ScrollLink } from "react-scroll/modules";
-import { DownloadBtn } from "../exportonly/Btn";
+import { DownloadBtn, DownloadLinkBtn } from "../exportonly/Btn";
+import PropTypes from "prop-types";
 
-const SummaryArtice = ({ imgBack = "", imgBackMobile = "" }) => {
+const SummaryArtice = ({ imgBack, imgBackMobile  }) => {
   const matches = useMediaQuery("(min-width:600px)");
   return (
     <Box
@@ -46,9 +47,11 @@ const SummaryArtice = ({ imgBack = "", imgBackMobile = "" }) => {
               선생님과 학부모, 아이간의 양방향 소통을 가능하게 해줍니다.
             </Typography>
           </Box>
-          <Box display="flex" justifyContent="space-evenly">
+          <Box display="flex" 
+          // justifyContent="space-between"
+          >
             <ScrollLink to="4" spy={true} smooth={true}>
-              <DownloadBtn color="white" variant="contained" name="다운로드" />
+              <DownloadLinkBtn color="white" variant="contained" name="다운로드" />
             </ScrollLink>
             <DownloadBtn
               color="white"
@@ -60,6 +63,13 @@ const SummaryArtice = ({ imgBack = "", imgBackMobile = "" }) => {
       </Container>
     </Box>
   );
+};
+
+SummaryArtice.propTypes = {
+
+  imgBack:PropTypes.string,
+  imgBackMobile:PropTypes.string,
+
 };
 
 export default SummaryArtice;

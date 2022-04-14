@@ -1,15 +1,12 @@
 import {
-  AccordionDetails,
-  AccordionSummary,
   Box,
   Container,
-  styled,
+
   Typography,
   useMediaQuery,
 } from "@mui/material";
-import React, { useState } from "react";
+import React from "react";
 import "./youtube&scrollbar.css";
-import MuiAccordion from "@mui/material/Accordion";
 import FaqAccordion from "../exportonly/FaqAccordion";
 import {
   FAQ1,
@@ -26,9 +23,11 @@ import {
   FAQ12,
   FAQ13,
   FAQ14,
-} from "../exportonly/RangFaqList";
+} from "../exportonly/SsamFaqList";
+import PropTypes from "prop-types";
 
-const FAQ = ({ faqBgColor = "" }) => {
+
+const FAQ = ({ faqBgColor}) => {
   const matches = useMediaQuery("(min-width:600px)");
   return (
     <Box
@@ -70,6 +69,12 @@ const FAQ = ({ faqBgColor = "" }) => {
       </Container>
     </Box>
   );
+};
+
+FAQ.propTypes = {
+
+  faqBgColor:PropTypes.string,
+
 };
 
 export default FAQ;

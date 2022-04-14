@@ -7,7 +7,7 @@ import FAQ from "../commoncomponents/Faq";
 import { SSAM_DETAIL_ARTICLE } from "../exportonly/Article";
 import ContactUs from "../commoncomponents/ContactUs";
 import FooterCopyright from "../commoncomponents/FooterCopyright";
-import Test2 from "../commoncomponents/Test2";
+import DownloadArticle from "../commoncomponents/DownloadArticle";
 import { ApiDownloadComponent } from "../exportonly/ApiDownloadComponent";
 
 function Ssamtalk() {
@@ -30,7 +30,7 @@ function Ssamtalk() {
       <FAQ faqBgColor="FAQbgcolor.main" />
       <ContactUs btnColor="ssamtalk" />
 
-      <Test2 {...ApiDownloadComponent} />
+      <DownloadArticle {...ApiDownloadComponent} />
 
       <FooterCopyright footerBgColor="black.main" />
     </div>

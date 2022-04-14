@@ -8,6 +8,7 @@ import {
 } from "@mui/material";
 import MuiAccordion from "@mui/material/Accordion";
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 
 const Accordion = styled((props) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -22,12 +23,12 @@ const Accordion = styled((props) => (
 }));
 
 const FaqAccordion = ({
-  faqNumber = "",
-  faqAccordionSummary = "",
-  faqAccordionDetail = "",
-  faqNumberColor = "",
-  faqPlusImage = "",
-  faqMinusImage = "",
+  faqNumber,
+  faqAccordionSummary,
+  faqAccordionDetail,
+  faqNumberColor,
+  faqPlusImage,
+  faqMinusImage,
 }) => {
   const [open, setOpen] = useState(false);
   const toggleAccordion = () => {
@@ -91,6 +92,16 @@ const FaqAccordion = ({
       </AccordionDetails>
     </Accordion>
   );
+};
+
+FaqAccordion.propTypes = {
+  faqNumber:PropTypes.string,
+  faqAccordionSummary:PropTypes.string,
+  faqAccordionDetail:PropTypes.string,
+  faqNumberColor:PropTypes.string,
+  faqPlusImage:PropTypes.string,
+  faqMinusImage:PropTypes.string,
+
 };
 
 export default FaqAccordion;

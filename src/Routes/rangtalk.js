@@ -2,13 +2,13 @@ import React from "react";
 import YoutubeAdvertisementArticle from "../commoncomponents/AdArticle";
 import ContactUs from "../commoncomponents/ContactUs";
 import DetailArticle from "../commoncomponents/DetailArticle";
-import FAQ from "../commoncomponents/Faq";
 import FixedHeaderMenu from "../commoncomponents/FixedHeaderMenu";
 import FooterCopyright from "../commoncomponents/FooterCopyright";
+import RangFAQ from "../commoncomponents/RangFaq";
 import SummaryArtice from "../commoncomponents/SummaryArticle";
-import Test2 from "../commoncomponents/Test2";
+import DownloadArticle from "../commoncomponents/DownloadArticle";
 import { ApiDownloadComponent } from "../exportonly/ApiDownloadComponent";
-import { SSAM_DETAIL_ARTICLE } from "../exportonly/Article";
+import { RANG_DETAIL_ARTICLE } from "../exportonly/Article";
 
 function Rangtalk() {
   return (
@@ -26,11 +26,11 @@ function Rangtalk() {
         imgBackMobile="url('./img/img-m@2x.png')"
       />
       <YoutubeAdvertisementArticle bgColor="rangtalk.light" />
-      <DetailArticle {...SSAM_DETAIL_ARTICLE} />
-      <FAQ faqBgColor="#e8f2f1" />
+      <DetailArticle {...RANG_DETAIL_ARTICLE} />
+      <RangFAQ faqBgColor="#e8f2f1" />
       <ContactUs btnColor="rangtalk" />
 
-      <Test2 {...ApiDownloadComponent} />
+      <DownloadArticle {...ApiDownloadComponent} />
 
       <FooterCopyright footerBgColor="black.main" />
     </div>

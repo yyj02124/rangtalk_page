@@ -83,7 +83,26 @@ export const HeadLinkBtn = ({ color = "", variant = "", name }) => {
   );
 };
 
-export const DownloadBtn = ({ color = "", variant = "", onClick, name }) => {
+export const DownloadBtn = ({ color = "", variant = "", onClick, name,fullWidth="" }) => {
+  return (
+    <Button
+      sx={{paddingRight:"12px", paddingLeft: "12px" , fontFamily: "Noto Sans KR" }}
+      size="large"
+      color={color}
+      variant={variant}
+      onClick={onClick}
+      fullWidth={fullWidth}
+      style={{
+        width:"50%",
+        height: 60,
+      }}
+    >
+      {name}
+    </Button>
+  );
+};
+
+export const DownloadLinkBtn = ({ color = "", variant = "", onClick, name,fullWidth="" }) => {
   return (
     <Button
       sx={{ fontFamily: "Noto Sans KR" }}
@@ -91,9 +110,11 @@ export const DownloadBtn = ({ color = "", variant = "", onClick, name }) => {
       color={color}
       variant={variant}
       onClick={onClick}
+      fullWidth={fullWidth}
       style={{
-        minWidth: 150,
+        width:150,
         height: 60,
+        marginRight:10
       }}
     >
       {name}
