@@ -1,4 +1,3 @@
-import { valueToPercent } from "@mui/base";
 import {
   Box,
   Container,
@@ -6,14 +5,18 @@ import {
   Typography,
   useMediaQuery,
 } from "@mui/material";
-import { height } from "@mui/system";
 import React, { useState } from "react";
-import HeadMenuBtn, { ContactUsBtn } from "../exportonly/Btn";
+import { ContactUsBtn } from "../exportonly/Btn";
+import PropTypes from "prop-types";
 
-const ContactUs = ({ btnColor = "" }) => {
+const ContactUs = ({ btnColor, checkOn }) => {
   const [count, setCount] = useState("");
+  const [click, setClick] = useState(true);
   const onChange = (event) => {
     setCount(event.target.value);
+  };
+  const onClick = () => {
+    setClick(!click);
   };
 
   const matches = useMediaQuery("(min-width:600px)");
@@ -22,7 +25,7 @@ const ContactUs = ({ btnColor = "" }) => {
     <div id="3">
       <Box position="relative" height={1080}>
         <Container>
-          <Box mt="30%">
+          <Box mt="30%" justifyContent="center">
             <Typography fontFamily="Noto Sans KR">
               쌤이랑톡에 대해 더 궁금한점이 있으신가요?
             </Typography>
@@ -149,15 +152,17 @@ const ContactUs = ({ btnColor = "" }) => {
                 placeholder="2000자까지 입력가능합니다."
                 fullWidth
                 onChange={onChange}
+                inputProps={{ maxLength: 2000 }}
               />
-              <Typography>{abc}/2000</Typography>
+              <Typography sx={{ textAlign: "right" }}>{abc}/2000</Typography>
             </Box>
             <Box display="flex" mt={2} mb={2}>
               <Box
                 component="img"
-                sx={{ width: 24, height: 24 }}
+                sx={{ width: 24, height: 24, cursor: "pointer" }}
                 alt="com_check_off"
-                src="./img/com_check_off@2x.png"
+                onClick={onClick}
+                src={click === true ? "./img/com_check_off@2x.png" : checkOn}
               />
               <Typography fontFamily="Noto Sans KR" color="3e3e3e">
                 개인정보 정책에 동의 합니다.
@@ -171,15 +176,22 @@ const ContactUs = ({ btnColor = "" }) => {
             />
 
             <Box
+              position="relative"
+              mt={15}
               {...(matches ? { display: "none" } : { display: "inline-block" })}
+              sx={{ mx: "auto", width: "100%" }}
             >
               <Box
                 component="img"
-                sx={{ width: 24, height: 24 }}
+                sx={{
+                  marginLeft: "48%",
+                  width: 24,
+                  height: 24,
+                }}
                 alt="ic_contact_service"
                 src="./img/ic_contact_service@2x.png"
               />
-              <Box display="flex">
+              <Box display="flex" justifyContent="center">
                 <Typography fontFamily="Noto Sans KR" color="irangtalk.main">
                   아이랑톡 고객센터
                 </Typography>
@@ -187,7 +199,7 @@ const ContactUs = ({ btnColor = "" }) => {
                   {"\u00A0"}010-0000-0000
                 </Typography>
               </Box>
-              <Box display="flex">
+              <Box display="flex" justifyContent="center">
                 <Typography fontFamily="Noto Sans KR" color="ssamtalk.main">
                   쌤이랑톡 고객센터
                 </Typography>
@@ -195,7 +207,7 @@ const ContactUs = ({ btnColor = "" }) => {
                   {"\u00A0"}010-0000-0000
                 </Typography>
               </Box>
-              <Box display="flex">
+              <Box display="flex" justifyContent="center">
                 <Typography fontFamily="Noto Sans KR" color="rangtalk.main">
                   학교랑톡 고객센터
                 </Typography>
@@ -209,6 +221,11 @@ const ContactUs = ({ btnColor = "" }) => {
       </Box>
     </div>
   );
+};
+
+ContactUs.propTypes = {
+  btnColor: PropTypes.string,
+  checkOn: PropTypes.string,
 };
 
 export default ContactUs;

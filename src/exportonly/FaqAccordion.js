@@ -8,6 +8,7 @@ import {
 } from "@mui/material";
 import MuiAccordion from "@mui/material/Accordion";
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 
 const Accordion = styled((props) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -22,12 +23,12 @@ const Accordion = styled((props) => (
 }));
 
 const FaqAccordion = ({
-  faqNumber = "",
-  faqAccordionSummary = "",
-  faqAccordionDetail = "",
-  faqNumberColor = "",
-  faqPlusImage = "",
-  faqMinusImage = "",
+  faqNumber,
+  faqAccordionSummary,
+  faqAccordionDetail,
+  faqNumberColor,
+  faqPlusImage,
+  faqMinusImage,
 }) => {
   const [open, setOpen] = useState(false);
   const toggleAccordion = () => {
@@ -43,7 +44,11 @@ const FaqAccordion = ({
         <Box
           component="img"
           mr={2}
-          sx={matches ? { width: "20px", height: "20px" } : { display: "none" }}
+          sx={
+            matches
+              ? { width: "24px", height: "24px", padding: "4px" }
+              : { display: "none" }
+          }
           alt="ic_faq1"
           src={
             //이미지 props를 넣고 아래 3항연산자를 옮겨준다.
@@ -62,14 +67,17 @@ const FaqAccordion = ({
         </Typography>
         <Box>
           <Box
+            position="absolute"
+            right="0%"
+            p="4px"
             component="img"
             sx={
               matches
                 ? { display: "none" }
                 : {
                     display: "block",
-                    width: "20px",
-                    height: "20px",
+                    width: "24px",
+                    height: "24px",
                   }
             }
             alt="ic_faq1"
@@ -91,6 +99,15 @@ const FaqAccordion = ({
       </AccordionDetails>
     </Accordion>
   );
+};
+
+FaqAccordion.propTypes = {
+  faqNumber: PropTypes.string,
+  faqAccordionSummary: PropTypes.string,
+  faqAccordionDetail: PropTypes.array,
+  faqNumberColor: PropTypes.string,
+  faqPlusImage: PropTypes.string,
+  faqMinusImage: PropTypes.string,
 };
 
 export default FaqAccordion;

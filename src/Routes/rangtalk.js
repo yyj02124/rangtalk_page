@@ -2,17 +2,19 @@ import React from "react";
 import YoutubeAdvertisementArticle from "../commoncomponents/AdArticle";
 import ContactUs from "../commoncomponents/ContactUs";
 import DetailArticle from "../commoncomponents/DetailArticle";
-import FAQ from "../commoncomponents/Faq";
 import FixedHeaderMenu from "../commoncomponents/FixedHeaderMenu";
 import FooterCopyright from "../commoncomponents/FooterCopyright";
+import RangFAQ from "../commoncomponents/RangFaq";
 import SummaryArtice from "../commoncomponents/SummaryArticle";
-import Test2 from "../commoncomponents/Test2";
-import { ApiDownloadComponent } from "../exportonly/ApiDownloadComponent";
-import { SSAM_DETAIL_ARTICLE } from "../exportonly/Article";
+import DownloadArticle from "../commoncomponents/DownloadArticle";
+import { API_DOWNLOAD_COMPONENT } from "../exportonly/ApiDownloadComponent";
+import { RANG_DETAIL_ARTICLE } from "../exportonly/Article";
+import BtnTop from "../commoncomponents/BtnTop";
 
 function Rangtalk() {
   return (
     <div>
+      <BtnTop />
       <FixedHeaderMenu
         refresh="/rangtalk"
         fullLogoImg="img/img_fulllogo1_big@2x.png"
@@ -26,11 +28,11 @@ function Rangtalk() {
         imgBackMobile="url('./img/img-m@2x.png')"
       />
       <YoutubeAdvertisementArticle bgColor="rangtalk.light" />
-      <DetailArticle {...SSAM_DETAIL_ARTICLE} />
-      <FAQ faqBgColor="#e8f2f1" />
-      <ContactUs btnColor="rangtalk" />
+      <DetailArticle {...RANG_DETAIL_ARTICLE} />
+      <RangFAQ faqBgColor="#e8f2f1" />
+      <ContactUs btnColor="rangtalk" checkOn="./img/com_check_on2@2x.png" />
 
-      <Test2 {...ApiDownloadComponent} />
+      <DownloadArticle {...API_DOWNLOAD_COMPONENT} />
 
       <FooterCopyright footerBgColor="black.main" />
     </div>

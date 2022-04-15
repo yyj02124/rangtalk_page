@@ -1,7 +1,8 @@
 import { Box, Container, Typography, useMediaQuery } from "@mui/material";
 import React from "react";
+import PropTypes from "prop-types";
 
-const FooterCopyright = ({ footerBgColor = "" }) => {
+const FooterCopyright = ({ footerBgColor }) => {
   const matches = useMediaQuery("(min-width:600px)");
   return (
     <Box
@@ -32,6 +33,10 @@ const FooterCopyright = ({ footerBgColor = "" }) => {
       </Container>
     </Box>
   );
+};
+
+FooterCopyright.propTypes = {
+  footerBgColor: PropTypes.string,
 };
 
 export default FooterCopyright;

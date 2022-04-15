@@ -7,12 +7,14 @@ import FAQ from "../commoncomponents/Faq";
 import { SSAM_DETAIL_ARTICLE } from "../exportonly/Article";
 import ContactUs from "../commoncomponents/ContactUs";
 import FooterCopyright from "../commoncomponents/FooterCopyright";
-import Test2 from "../commoncomponents/Test2";
-import { ApiDownloadComponent } from "../exportonly/ApiDownloadComponent";
+import DownloadArticle from "../commoncomponents/DownloadArticle";
+import { API_DOWNLOAD_COMPONENT } from "../exportonly/ApiDownloadComponent";
+import BtnTop from "../commoncomponents/BtnTop";
 
 function Ssamtalk() {
   return (
     <div>
+      <BtnTop />
       <FixedHeaderMenu
         refresh="/"
         fullLogoImg="img/img_fulllogo_big@2x.png"
@@ -28,9 +30,9 @@ function Ssamtalk() {
       <YoutubeAdvertisementArticle bgColor="ssamtalklite.light" />
       <DetailArticle {...SSAM_DETAIL_ARTICLE} />
       <FAQ faqBgColor="FAQbgcolor.main" />
-      <ContactUs btnColor="ssamtalk" />
+      <ContactUs btnColor="ssamtalk" checkOn="./img/com_check_on1@2x.png" />
 
-      <Test2 {...ApiDownloadComponent} />
+      <DownloadArticle {...API_DOWNLOAD_COMPONENT} />
 
       <FooterCopyright footerBgColor="black.main" />
     </div>

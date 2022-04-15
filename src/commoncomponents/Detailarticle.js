@@ -1,8 +1,7 @@
-import { Box, Container, Grid, Typography, useMediaQuery } from "@mui/material";
+import { Box, Container, Typography, useMediaQuery } from "@mui/material";
 import React from "react";
 import { Dot } from "../exportonly/Btn";
 import PropTypes from "prop-types";
-import MediaQuery from "../exportonly/MediaQuery";
 //cssmodule이랑 css차이 mui랑 css모듈 같이 쓸수 있는가?
 //빌드 하면 차이는? =>빌드해보고 output찾아내기
 //img src파일에 집어 넣어보기
@@ -99,8 +98,9 @@ const DetailArticle = ({
                 gridTemplateColumns: "1fr 54px 1fr 54px 1fr ",
               }
             : { gridTemplateRows: "1fr1fr1fr" })}
-          position="absolute"
+          position="relative"
           mt={matches ? -30 : -80}
+          mb={matches ? 15 : 10}
         >
           <Box sx={{ placeItems: "center" }} display="flex">
             <Box

@@ -1,10 +1,9 @@
 import { Box, Container, Typography, useMediaQuery } from "@mui/material";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import HeadMenuBtn, { ApiDownMenuBtn } from "../exportonly/Btn";
 import PropTypes from "prop-types";
 import CallAPI from "./CallAPI";
-import { display, width } from "@mui/system";
-const Test2 = ({
+const DownloadArticle = ({
   apiDownBgColor,
   bgImg1,
   bgImg2,
@@ -30,11 +29,19 @@ const Test2 = ({
   imgBottomLogo1,
   imgBottomLogo2,
   imgBottomLogo3,
+  ssamMenual,
+  rangMenual,
 }) => {
-  const [handle, setHandle] = useState("1");
+  const [handle, setHandle] = useState(
+    window.location.pathname === "/ssamtalk" ? "1" : "2"
+  );
   const count = (event) => {
     setHandle(event.target.value);
   };
+
+  useEffect(() => {
+    console.log(window.location.pathname);
+  }, []);
 
   const matches = useMediaQuery("(min-width:600px)");
 
@@ -55,7 +62,7 @@ const Test2 = ({
         position="relative"
       >
         <Container>
-          <Box position="absolute" mt={"10%"}>
+          <Box position="absolute" mt={"15%"}>
             <Box display="flex" justifyContent="space-evenly">
               <ApiDownMenuBtn
                 onClickBtn={count}
@@ -128,7 +135,7 @@ const Test2 = ({
                 matches
                   ? { display: "none" }
                   : {
-                      width: "100%",
+                      maxWidth: "100%",
                       height: 341,
                     }
               }
@@ -143,26 +150,49 @@ const Test2 = ({
                   : bgMobileImg3
               }
             />
-
-            <HeadMenuBtn
-              color={
-                handle === "0"
-                  ? ssamtakManualColor1
-                  : handle === "1"
-                  ? ssamtakManualColor2
-                  : ssamtakManualColor3
+            <a
+              style={{ textDecoration: "none" }}
+              href={
+                handle === "0" ? null : handle === "1" ? ssamMenual : rangMenual
               }
-              fullWidth={true}
-              variant="contained"
-              name={
-                handle === "0"
-                  ? ssamtakManual1
-                  : handle === "1"
-                  ? ssamtakManual2
-                  : ssamtakManual3
+              download={
+                handle === "1"
+                  ? "KT_쌤이랑톡_사용자_매뉴얼_V1.4_20210813.pdf"
+                  : "KT_학교랑톡_사용자_매뉴얼_V1.4_20210813.pdf"
               }
-            />
+              target="_self"
+            >
+              <HeadMenuBtn
+                color={
+                  handle === "0"
+                    ? ssamtakManualColor1
+                    : handle === "1"
+                    ? ssamtakManualColor2
+                    : ssamtakManualColor3
+                }
+                fullWidth={true}
+                variant="contained"
+                name={
+                  handle === "0"
+                    ? ssamtakManual1
+                    : handle === "1"
+                    ? ssamtakManual2
+                    : ssamtakManual3
+                }
+              ></HeadMenuBtn>
+            </a>
             <CallAPI />
+            <Typography
+              color="#404040"
+              fontFamily="Noto Sans KR"
+              fontSize={12}
+              width={293}
+            >
+              * iOS앱은 ‘설정{">"}일반{">"}기기 관리 (또는 프로파일 및 기기
+              관리) {">"}
+              Helixtech Corp. 에서 ‘신뢰함{">"}신뢰’ 버튼을 꼭 확인해주셔야
+              어플이 정상적으로 실행됩니다.
+            </Typography>
           </Box>
         </Container>
       </Box>
@@ -170,7 +200,7 @@ const Test2 = ({
   );
 };
 
-Test2.propTypes = {
+DownloadArticle.propTypes = {
   apiDownBgColor: PropTypes.string,
   bgImg1: PropTypes.string,
   bgImg2: PropTypes.string,
@@ -184,7 +214,7 @@ Test2.propTypes = {
   apiDownloadTitle1: PropTypes.string,
   apiDownloadTitle2: PropTypes.string,
   apiDownloadTitle3: PropTypes.string,
-  ssamtakManualExplain1: PropTypes.string,
+  ssamtakManualExplain1: PropTypes.array,
   ssamtakManualExplain2: PropTypes.string,
   ssamtakManualExplain3: PropTypes.string,
   ssamtakManual1: PropTypes.string,
@@ -192,4 +222,4 @@ Test2.propTypes = {
   ssamtakManual3: PropTypes.string,
 };
 
-export default Test2;
+export default DownloadArticle;

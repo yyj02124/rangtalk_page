@@ -1,15 +1,11 @@
-import {
-  Box,
-  Container,
-  Divider,
-  getNativeSelectUtilityClasses,
-} from "@mui/material";
+import { Box, Container, Divider } from "@mui/material";
 import React from "react";
 import { Link as ScrollLink } from "react-scroll/modules";
 import { Link } from "react-router-dom";
 import { StyledAppBar } from "../exportonly/Css";
 import HeadMenuBtn, { HeadLinkBtn } from "../exportonly/Btn";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import PropTypes from "prop-types";
 
 // const StyledAppBar = styled(AppBar)(({ theme }) => ({
 //   backgroundColor: "#fff",
@@ -17,16 +13,16 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 // }));
 
 const FixedHeaderMenu = ({
-  refresh = "",
-  fullLogoImg = "",
-  loginColor = "",
-  irangLinkBtnColor = "",
-  ssamLinkBtnColor = "",
-  rangLinkBtnColor = "",
+  refresh,
+  fullLogoImg,
+  loginColor,
+  irangLinkBtnColor,
+  ssamLinkBtnColor,
+  rangLinkBtnColor,
 }) => {
   const matches = useMediaQuery("(min-width:600px)");
   return (
-    <div>
+    <Box>
       <StyledAppBar
         elevation={1}
         // sx={{ backgroundColor: "#fff" }}
@@ -105,8 +101,18 @@ const FixedHeaderMenu = ({
           </Box>
         </Container>
       </StyledAppBar>
-    </div>
+    </Box>
   );
+};
+
+FixedHeaderMenu.propTypes = {
+  btnColor: PropTypes.string,
+  refresh: PropTypes.string,
+  fullLogoImg: PropTypes.string,
+  loginColor: PropTypes.string,
+  irangLinkBtnColor: PropTypes.string,
+  ssamLinkBtnColor: PropTypes.string,
+  rangLinkBtnColor: PropTypes.string,
 };
 
 export default FixedHeaderMenu;

@@ -9,6 +9,7 @@ const CallAPI = () => {
   const onClickAndroidDownloadBtn = () => {
     window.open(data.rangtalkAndroid.downloadUrl);
   };
+
   const onClickIosDownloadBtn = () => {
     window.open(data.samrangtalkIos.downloadUrl);
   };
@@ -31,17 +32,19 @@ const CallAPI = () => {
   }, []);
 
   return (
-    <Box display="flex" justifyContent="space-evenly" mt={1}>
+    <Box display="flex" justifyContent="space-between" mt={1.5}>
       <DownloadBtn
         onClick={onClickAndroidDownloadBtn}
         color="white"
         variant="contained"
+        fullWidth={true}
         name="google"
       ></DownloadBtn>
 
       <DownloadBtn
         onClick={onClickIosDownloadBtn}
         color="white"
+        fullWidth={true}
         variant="contained"
         name="apple"
       ></DownloadBtn>

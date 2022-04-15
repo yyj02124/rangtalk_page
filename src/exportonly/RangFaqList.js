@@ -1,4 +1,4 @@
-export const FAQ1 = {
+export const RangTalkFAQ1 = {
   faqNumber: "01",
   faqNumberColor: "rangtalk.main",
   faqAccordionSummary: " 통화 요금이 궁금합니다.",
@@ -27,7 +27,7 @@ export const FAQ1 = {
   ],
 };
 
-export const FAQ2 = {
+export const RangTalkFAQ2 = {
   faqNumber: "02",
   faqNumberColor: "rangtalk.main",
   faqAccordionSummary:
@@ -38,7 +38,7 @@ export const FAQ2 = {
     "학교랑톡은 통신사, 단말 OS 상관없이 모두 이용이 가능합니다.",
   ],
 };
-export const FAQ3 = {
+export const RangTalkFAQ3 = {
   faqNumber: "03",
   faqNumberColor: "rangtalk.main",
   faqAccordionSummary: "로그인 비밀번호를 모르겠어요.",
@@ -51,7 +51,7 @@ export const FAQ3 = {
   ],
 };
 
-export const FAQ4 = {
+export const RangTalkFAQ4 = {
   faqNumber: "04",
   faqNumberColor: "rangtalk.main",
   faqAccordionSummary: "근무시간 설정은 어떻게 하나요?",
@@ -64,7 +64,7 @@ export const FAQ4 = {
   ],
 };
 
-export const FAQ5 = {
+export const RangTalkFAQ5 = {
   faqNumber: "05",
   faqNumberColor: "rangtalk.main",
   faqAccordionSummary: "휴가 기간 설정은 어떻게 하나요?",
@@ -77,7 +77,7 @@ export const FAQ5 = {
   ],
 };
 
-export const FAQ6 = {
+export const RangTalkFAQ6 = {
   faqNumber: "06",
   faqNumberColor: "rangtalk.main",
   faqAccordionSummary:
@@ -89,7 +89,7 @@ export const FAQ6 = {
   ],
 };
 
-export const FAQ7 = {
+export const RangTalkFAQ7 = {
   faqNumber: "07",
   faqNumberColor: "rangtalk.main",
   faqAccordionSummary: "통화 녹음은 어떻게 사용하나요?",
@@ -100,7 +100,7 @@ export const FAQ7 = {
   ],
 };
 
-export const FAQ8 = {
+export const RangTalkFAQ8 = {
   faqNumber: "08",
   faqNumberColor: "rangtalk.main",
   faqAccordionSummary: "통화 녹음한 파일은 어디에서 확인 할 수 있나요?",
@@ -113,7 +113,7 @@ export const FAQ8 = {
   ],
 };
 
-export const FAQ9 = {
+export const RangTalkFAQ9 = {
   faqNumber: "09",
   faqNumberColor: "rangtalk.main",
   faqAccordionSummary: "학부모/학생 연락처 추가는 어떻게 하나요?",
@@ -126,7 +126,7 @@ export const FAQ9 = {
   ],
 };
 
-export const FAQ10 = {
+export const RangTalkFAQ10 = {
   faqNumber: "10",
   faqNumberColor: "rangtalk.main",
   faqAccordionSummary: "연락처 검색은 어떻게 하나요?",
@@ -137,7 +137,7 @@ export const FAQ10 = {
   ],
 };
 
-export const FAQ11 = {
+export const RangTalkFAQ11 = {
   faqNumber: "11",
   faqNumberColor: "rangtalk.main",
   faqAccordionSummary: "랑톡 지원센터 연락처는 어떻게 되나요?",
@@ -152,7 +152,7 @@ export const FAQ11 = {
   ],
 };
 
-export const FAQ12 = {
+export const RangTalkFAQ12 = {
   faqNumber: "12",
   faqNumberColor: "rangtalk.main",
   faqAccordionSummary: "학부모/학생이 보낸 승인 신청은 어디서 확인 하나요?",
@@ -163,7 +163,7 @@ export const FAQ12 = {
   ],
 };
 
-export const FAQ13 = {
+export const RangTalkFAQ13 = {
   faqNumber: "13",
   faqNumberColor: "rangtalk.main",
   faqAccordionSummary:
@@ -175,7 +175,7 @@ export const FAQ13 = {
   ],
 };
 
-export const FAQ14 = {
+export const RangTalkFAQ14 = {
   faqNumber: "14",
   faqNumberColor: "rangtalk.main",
   faqAccordionSummary: "긴급 메시지는 어떻게 사용하나요?",

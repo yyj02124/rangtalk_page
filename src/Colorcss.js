@@ -34,6 +34,9 @@ const theme = createTheme({
       main: "#5fc6be",
       contrastText: "#fff",
     },
+    rangtalkhighlight: {
+      main: "#d8efed",
+    },
     FAQbgcolor: {
       main: "#e1e7ea",
     },
